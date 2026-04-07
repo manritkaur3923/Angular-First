@@ -1,0 +1,11 @@
+<!-- <h2>Data Entered: {{word}}</h2>
+<input type="text" (input)="handleInput($event)" /> -->
+
+<!-- 
+<h1>{{name()}}</h1>
+<input type="text" [(ngModel)]="name"> -->
+
+<h1>Your Name is : {{name}}</h1>
+<input type="text" value="{{name}}" placeholder="Enter your name" #nameFeild>
+<button (click)="getName(nameFeild.value)" >Get Name</button> 
+<button>Set Name</button>

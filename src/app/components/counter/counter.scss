@@ -1,0 +1,39 @@
+h1{
+    display: flex;
+    justify-content: center;
+}
+div{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+button{
+    border: 1px solid gray;
+    border-radius: 50%;
+    height: 150px;
+    width: 150px;
+    text-align: center;
+    font-weight: bold;
+    font-size: larger;
+    color: white;
+    transition: all;
+    transition-duration: 1ms;
+}
+#inc{
+    background-color: rgb(9, 183, 9);
+}
+#inc:active{
+    background-color: rgb(7, 157, 7);
+}
+#dec{
+    background-color: rgb(203, 9, 9);
+}
+#dec:active{
+    background-color: rgb(186, 7, 7);
+}
+#reset{
+    background-color: rgb(20, 144, 166);
+}
+#reset:active{
+    background-color: rgb(7, 131, 153);
+}
