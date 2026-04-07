@@ -1,0 +1,8 @@
+<input type="text" [(ngModel)]="value" #inputField />
+<h5>Typed : {{ value }}</h5>
+
+<p [style.color]="value.length === 0 ? 'red' : value.length >= 10 ? 'green' : 'orange'">
+  {{ value.length === 0 ? 'Field is Empty' : value.length >= 10 ? 'Accepted' : 'Warning' }}
+</p>
+
+<button (click)="clearInput(inputField)">Clear Input</button>

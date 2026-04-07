@@ -1,0 +1,47 @@
+<h1>Dynamic Color Changer</h1>
+
+<div
+  [style.background]="isRed ? 'red' : 'green'"
+  style="height: 100px; width: 100px; margin-bottom: 10px; transition: 0.3s"
+></div>
+
+<button (click)="toggle()">{{ isRed ? 'Change to Green' : 'Change to Red' }}</button>
+
+<hr />
+
+<h2>Input-based styling</h2>
+
+<input
+  type="text"
+  [(ngModel)]="password"
+  [style.color]="password.length > 5 ? 'green' : 'red'"
+  placeholder="Enter something..."
+/>
+<p>
+  Typed :
+  <span [style.color]="password.length > 5 ? 'green' : 'red'">
+    {{ password }}
+  </span>
+</p>
+
+<hr />
+
+<h1>Show/Hide/Toggle</h1>
+
+<button
+  style="height: 30px; background-color: blueviolet; color: whitesmoke; border: none"
+  (click)="handleVisibility()"
+>
+  {{ view ? 'Hide' : 'Show' }} Paragraph
+</button>
+
+@if (view) {
+  <p>
+    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi ipsa minima sed repudiandae
+    corporis et aut doloribus magni, voluptatem animi doloremque dignissimos ad. Sint illum omnis
+    similique, hic tempora dolorum!
+  </p>
+}
+
+<hr>
+

@@ -1,0 +1,30 @@
+<h1>Switch Case UI</h1>
+
+<input type="number" [(ngModel)]="dayNum" />
+
+@switch (dayNum) {
+  @case (1) {
+    <h2>Monday</h2>
+  }
+  @case (2) {
+    <h2>Tuesday</h2>
+  }
+  @case (3) {
+    <h2>Wednesday</h2>
+  }
+  @case (4) {
+    <h2>Thursday</h2>
+  }
+  @case (5) {
+    <h2>Friday</h2>
+  }
+  @case (6) {
+    <h2>Saturday</h2>
+  }
+  @case (7) {
+    <h2>Sunday</h2>
+  }
+  @default {
+    <h2>Invalid Day Number</h2>
+  }
+}
