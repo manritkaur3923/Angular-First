@@ -8,10 +8,28 @@ import { TogglePassword } from './components/toggle-password/toggle-password';
 import { RoleBasedUI } from './components/role-based-ui/role-based-ui';
 import { SwitchCaseUI } from './components/switch-case-ui/switch-case-ui';
 import { SmartInputBox } from './components/smart-input-box/smart-input-box';
+import { BasicsOfLoop } from './components/basics-of-loop/basics-of-loop';
+import { LoopWithObjects } from './components/loop-with-objects/loop-with-objects';
+import { Signals } from './components/signals/signals';
+import { AdvancedSignal } from './components/advanced-signal/advanced-signal';
 
 @Component({
   selector: 'app-root',
-  imports: [Home, Counter, LiveInput, ButtonDisableInput, DynamicColorChanger, TogglePassword, RoleBasedUI, SwitchCaseUI, SmartInputBox],
+  imports: [
+    Home,
+    Counter,
+    LiveInput,
+    ButtonDisableInput,
+    DynamicColorChanger,
+    TogglePassword,
+    RoleBasedUI,
+    SwitchCaseUI,
+    SmartInputBox,
+    BasicsOfLoop,
+    LoopWithObjects,
+    Signals,
+    AdvancedSignal,
+  ],
   templateUrl: './app.html',
   styleUrl: './app.scss',
 })

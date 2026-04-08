@@ -1,0 +1,26 @@
+<h1>Basics of Loop</h1>
+
+<hr />
+<h2>1. Simple List Render</h2>
+@for (fruit of fruits; track fruit) {
+  <li>{{ fruit }}</li>
+}
+
+<hr />
+
+<h2>2. Index Display</h2>
+
+@for (fruit of fruits; track fruit; let key = $index) {
+  <li>{{ key + 1 }} - {{ fruit }}</li>
+}
+
+<hr />
+
+<h2>3. Empty State Handling</h2>
+@if (fruits.length === 0) {
+  <p>No items available</p>
+} @else {
+  @for (fruit of fruits; track fruit; let key = $index) {
+    <li>{{ key + 1 }} - {{ fruit }}</li>
+  }
+}

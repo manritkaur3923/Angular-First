@@ -1,0 +1,30 @@
+<h1>Advanced Signals</h1>
+<hr />
+<h2>Completed Tasks Counter</h2>
+<ol>
+  @for (task of todos(); track task; let id = $index) {
+    <div style="display: flex; gap: 14px; margin-bottom: 10px">
+      <li>{{ task.task }} - {{ task.done ? 'Completed' : 'Not Completed' }}</li>
+      <button (click)="toggleTask(id)">{{ task.done ? 'Uncheck' : 'Check' }}</button>
+    </div>
+  }
+</ol>
+<h4>Total tasks: {{ totalTasks() }}</h4>
+<h4>Completed tasks: {{ completedTasks() }}</h4>
+
+<hr />
+<hr />
+
+<h2>Disable Button Logic</h2>
+<input type="text" placeholder="Enter Username" (input)="username.set($any($event.target).value)" />
+<br />
+<br />
+<input type="text" placeholder="Enter Password" (input)="password.set($any($event.target).value)" />
+<br />
+<br />
+<button [disabled]="!isFormValid()">Submit</button>
+
+<hr>
+<hr>
+
+<h2>Derived UI States (Real Interview Level)</h2>

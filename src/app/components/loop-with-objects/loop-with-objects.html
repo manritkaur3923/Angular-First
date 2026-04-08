@@ -1,0 +1,30 @@
+<h1>Level 2: LOOP - Real UI Usage</h1>
+
+<h2>Product List</h2>
+
+@for (product of products; track product.name) {
+  <li>{{ product.name }} - {{ product.price }}</li>
+}
+
+<hr />
+
+<h2>Conditional Styling Inside Loop</h2>
+
+@for (product of products; track product.name) {
+  <li [style.color]="product.price > 30000 ? 'green' : 'red'">
+    {{ product.name }} - {{ product.price }}
+  </li>
+}
+
+<hr />
+
+<h2>Add / Remove Items</h2>
+
+<input type="text" placeholder="Enter fruit name..." [value]="fruit" #fruitField />
+<button (click)="handleAdd(fruitField)">Add Fruit</button>
+@for (f of fruits; track f; let key = $index) {
+  <ul style="display: flex; padding: 10px; gap: 12px">
+    <li>{{ f }}</li>
+    <button (click)="handleDelete(key)">Delete</button>
+  </ul>
+}

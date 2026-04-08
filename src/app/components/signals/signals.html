@@ -1,0 +1,76 @@
+<h1>Practice Signals</h1>
+<hr />
+<h3>Counter with Signals</h3>
+<h2>{{ count() }}</h2>
+<button (click)="count.update((val)=> val+1)">Increment</button>
+<button (click)="count.set(count() - 1)">Decrement</button>
+<button (click)="count.set(0)">Reset</button>
+
+<hr />
+<hr />
+<h3>Input with Signal</h3>
+
+<h2>Typed : {{ name() }}</h2>
+<input type="text" #inputField (input)="updateName(inputField)" />
+
+<hr />
+<hr />
+<h3>Fullname Generator</h3>
+<input type="text" placeholder="Enter first name..." (input)="firstname.set($event.target.value)" />
+<input type="text" placeholder="Enter last name..." (input)="lastname.set($event.target.value)" />
+
+<h1>Full Name : {{ fullname() }}</h1>
+
+<hr />
+<hr />
+
+<h3>Character Counter</h3>
+
+<h2>Value Typed : {{ value() }}</h2>
+<h2>
+  Status :
+  <span [style.color]="value().length < 5 ? 'red' : value().length > 10 ? 'green' : 'orange'">
+    {{ value().length < 5 ? 'Too Short' : value().length > 10 ? 'Strong' : 'Good' }}
+  </span>
+</h2>
+<input type="text" placeholder="Enter something..." (input)="checkLength($event.target)" />
+
+<hr />
+<hr />
+
+<h3>Cart Total Price</h3>
+
+<div>
+  @for (item of cart(); track item; let id = $index) {
+    <p>{{ item.name }} - {{ item.price }}</p>
+    <button (click)="decQty(id)">-</button>
+    <span>
+      {{ item.qty }}
+    </span>
+    <button (click)="incQty(id)">+</button>
+  }
+</div>
+<hr />
+<h2>Total Price : {{ totalPrice() }}</h2>
+
+<hr />
+<hr />
+
+<!-- <div 
+  [style.background-color]="isDark() ? '#121212' : 'white'" 
+  [style.color]="isDark() ? 'white' : 'black'"
+> -->
+<div [style]="themeStyles()">
+  <h3>Toggle Theme (Dark/Light)</h3>
+  <button (click)="toggleTheme()">{{ isDark() ? 'Light' : 'Dark' }} Mode</button>
+</div>
+
+<hr />
+<hr />
+
+<h3>Filter List</h3>
+<input type="text" placeholder="Search..." (input)="search.set($any($event.target).value)" />
+
+@for(item of filteredItems(); track item; let id = $index){
+    <p>{{item}}</p>
+}
